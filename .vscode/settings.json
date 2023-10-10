@@ -1,0 +1,17 @@
+{
+    "files.exclude": {
+        "node_modules": true,
+        ".vscode": false,
+        ".gitignore": false,
+        "package.json": false,
+        "package-lock.json": true,
+        ".eslintrc.cjs": false,
+        "tsconfig.*": true,
+        "public": true,
+        "index.html": true,
+        "backup": true,
+        "next-env.d.ts": true,
+        "prettier.config.js": true,
+        ".prettierrc.json": true
+    }
+}
