@@ -9,7 +9,7 @@ function NavHeaderRaiz() {
         <nav className="col-start-2 col-end-2 flex items-center justify-between">
             <LogoNavHeaderRaiz />
             <Menu_Hamburguer_Toggle>
-                <div className="animate-fade-right animate-ease-linear absolute inset-y-0 right-0 w-full max-w-xs bg-slate-50 p-5">
+                <div className="absolute inset-y-0 right-0 w-full max-w-xs animate-fade-right border-l border-slate-100 bg-slate-50 p-5 shadow animate-ease-linear">
                     <Menu_Open_Click_Close />
                 </div>
             </Menu_Hamburguer_Toggle>
