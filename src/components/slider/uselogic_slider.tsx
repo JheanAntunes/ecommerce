@@ -30,10 +30,6 @@ function Use_logic_slider(Images: string[]) {
         slide_Direction_Animation.current = dot > currentImg ? 'right' : 'left'
     }
 
-    // const autoSlider = () => {
-    //     if(idTimout)
-    //     const idTimout = setTimeout(handle_Click_Button_Right_Slider_Next, 1000)
-    // }
     useEffect(() => {
         if (idTimout.current) clearTimeout(idTimout.current)
         idTimout.current = setTimeout(
