@@ -1,20 +1,22 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
+import { Type_Data_Image_Description } from './Type_data_Image_Description'
 
-function Use_logic_slider(Images: string[]) {
+function useLogicSlider(Images: Type_Data_Image_Description[]) {
     const [currentImg, setCurrentImg] = useState(0)
     const slide_Direction_Animation = useRef<'left' | 'right'>('left')
     const limit_Array_Images_Lenght = useRef<number>(Images.length)
     const idTimout = useRef<NodeJS.Timeout | undefined>(undefined)
     const timerTimout = 3500 //3segundo e meio
-    //Funções auxiliares Slider.
-    const handle_Click_Button_Left_Slider_Previous = () => {
+
+    // //Funções auxiliares Slider.
+    const handle_Click_Button_Left_Slider_Previous = useCallback(() => {
         setCurrentImg((imgAtual) =>
             imgAtual - 1 < 0
                 ? limit_Array_Images_Lenght.current - 1
                 : imgAtual - 1
         )
         slide_Direction_Animation.current = 'left'
-    }
+    }, [])
 
     const handle_Click_Button_Right_Slider_Next = useCallback(() => {
         setCurrentImg((imgAtual) =>
@@ -52,4 +54,4 @@ function Use_logic_slider(Images: string[]) {
     }
 }
 
-export default Use_logic_slider
+export default useLogicSlider

@@ -1,10 +1,14 @@
+import { Type_Data_Image_Description } from '@/components/slider/Type_data_Image_Description'
 import { Type_Api_DATA } from '@/schema/api/schema_Api_data'
 
-export const product_ImgThumb_formated_Array_ImgThumb = (
+export const product_ImgThumb_Description_formated_Array = (
     data: Type_Api_DATA
-): string[] => {
-    const string_Formate_Url_Images = data.products.map(
-        (product) => product.thumbnail
-    )
-    return string_Formate_Url_Images
+): Type_Data_Image_Description[] => {
+    const dataImageDescription = data.products.map((product) => {
+        return {
+            image_thumbnail: product.thumbnail,
+            description: product.description,
+        }
+    })
+    return dataImageDescription
 }
