@@ -28,6 +28,25 @@ export function TypographyH1({
     )
 }
 
+export function TypographyDecoradorH1({
+    className,
+    children,
+    ...props
+}: Type_Typography) {
+    return (
+        <h1
+            className={cn(
+                `flex scroll-m-20 items-center gap-2 text-4xl font-medium tracking-tight text-slate-800 before:block before:h-9 before:w-2 before:rounded before:bg-blue-600 before:content-[""] lg:text-5xl ${poppins.className}`,
+                {},
+                className
+            )}
+            {...props}
+        >
+            {children}
+        </h1>
+    )
+}
+
 export function TypographyH2({
     className,
     children,
