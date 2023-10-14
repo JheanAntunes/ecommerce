@@ -17,7 +17,7 @@ export function TypographyH1({
     return (
         <h1
             className={cn(
-                `scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl ${poppins.className}`,
+                `scroll-m-20 text-4xl font-medium tracking-tight lg:text-5xl ${poppins.className}`,
                 {},
                 className
             )}
