@@ -1,16 +1,14 @@
-import { TypographyH1 } from '@/components/Typography/typography'
+import { TypographyDecoradorH1 } from '@/components/Typography/typography'
 import { ExternalLink } from 'lucide-react'
 import Link from 'next/link'
 import { Button } from '../ui/button'
 import Categoria_Product from './categoria_product'
 
-function Categoria() {
+function Section_Categoria() {
     return (
-        <section className="col-start-2 col-end-2 mt-10 flex flex-col gap-5">
+        <section className="col-start-2 col-end-2 mt-16 flex flex-col gap-5">
             <div className="flex items-center justify-between">
-                <TypographyH1 className='flex items-center gap-2 text-slate-800 before:block before:h-9 before:w-2 before:rounded before:bg-blue-600 before:content-[""]'>
-                    Categorias
-                </TypographyH1>
+                <TypographyDecoradorH1>Categorias</TypographyDecoradorH1>
                 <Button
                     variant="outline"
                     className="flex items-center gap-2"
@@ -45,4 +43,4 @@ function Categoria() {
     )
 }
 
-export default Categoria
+export default Section_Categoria
