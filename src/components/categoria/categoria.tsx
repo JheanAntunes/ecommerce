@@ -6,7 +6,7 @@ import Categoria_Product from './categoria_product'
 
 function Categoria() {
     return (
-        <section className="col-start-2 col-end-2 mt-10 flex flex-col gap-10">
+        <section className="col-start-2 col-end-2 mt-10 flex flex-col gap-5">
             <div className="flex items-center justify-between">
                 <TypographyH1 className='flex items-center gap-2 text-slate-800 before:block before:h-9 before:w-2 before:rounded before:bg-blue-600 before:content-[""]'>
                     Categorias
