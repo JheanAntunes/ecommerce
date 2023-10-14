@@ -20,7 +20,7 @@ function WrapperSlider({ dataImageDescription }: Type_WrapperSlider_Props) {
     } = useLogicSlider(dataImageDescription)
 
     return (
-        <div className="col-start-2 col-end-2 mt-5 flex flex-col gap-5 overflow-hidden">
+        <div className="col-start-2 col-end-2 mt-10 flex flex-col gap-5 overflow-hidden">
             <div className="relative flex max-w-full flex-col items-center">
                 {/* Img & controls right/left */}
                 <Wrapper_Image_Slider

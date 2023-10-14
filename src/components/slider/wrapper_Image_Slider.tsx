@@ -16,7 +16,7 @@ function Wrapper_Image_Slider({
     slide_Direction_Animation,
 }: Type_Wrapper_Image_Slider_Props) {
     return (
-        <div className="relative h-52 @xs:w-56 @sm:w-56 @md:w-72 @lg:w-80 @2xl:w-[448px]  @3xl:w-[512px] @4xl:w-[672px] @5xl:w-[48rem] ">
+        <div className="relative h-52 overflow-hidden @xs:w-56 @sm:w-56 @md:w-72 @lg:w-80 @2xl:w-[448px] @3xl:w-[512px] @4xl:w-[672px] @5xl:w-[48rem]">
             <AnimatePresence>
                 <MotionComponent
                     key={currentImg}
@@ -27,6 +27,7 @@ function Wrapper_Image_Slider({
                             : 'hiddenLeft'
                     }
                     animate="visible"
+                    sizes="(max-width: 768px) 512px, (max-width: 1200px) 768px, 50vw"
                     exit="exit"
                     src={images_Thumb[currentImg].image_thumbnail}
                     alt={images_Thumb[currentImg].description}

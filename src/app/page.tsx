@@ -1,3 +1,4 @@
+import Categoria from '@/components/categoria/categoria'
 import SkeletonSlider from '@/components/skeletons/slider/skeletonSlider'
 import Slider_Server_GET_DADOS from '@/components/slider/Slider_Server_GET_DADOS'
 import { Suspense } from 'react'
@@ -9,6 +10,7 @@ export default function Home() {
                 {/* @ts-ignore */}
                 <Slider_Server_GET_DADOS />
             </Suspense>
+            <Categoria />
         </>
     )
 }
