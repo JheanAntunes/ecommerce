@@ -1,4 +1,4 @@
-import { TypographyH1 } from '@/Typography/typography'
+import { TypographyH1 } from '@/components/Typography/typography'
 import { ExternalLink } from 'lucide-react'
 import Link from 'next/link'
 import { Button } from '../ui/button'
