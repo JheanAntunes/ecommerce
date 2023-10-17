@@ -11,7 +11,7 @@ function Section_Categoria() {
                 <TypographyDecoradorH1>Categorias</TypographyDecoradorH1>
                 <Button
                     variant="outline"
-                    className="flex items-center gap-2"
+                    className="flex items-center gap-2 @xs:px-2 @xs:py-0"
                     asChild
                 >
                     <Link href="#">

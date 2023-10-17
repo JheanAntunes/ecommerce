@@ -12,7 +12,7 @@ type Type_Categoria_Product = {
 function Categoria_Product({ alt, href, src, text }: Type_Categoria_Product) {
     return (
         <Link href={href} className="flex flex-col items-center gap-2">
-            <div className="relative h-20 w-20 overflow-hidden rounded-full">
+            <div className="relative h-20 w-20 overflow-hidden rounded-full @xs:h-16 @xs:w-16">
                 <Image
                     src={src}
                     fill

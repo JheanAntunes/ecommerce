@@ -2,7 +2,7 @@ import { cn } from '@/lib/utils'
 import { Poppins } from 'next/font/google'
 
 const poppins = Poppins({
-    weight: ['600'],
+    weight: ['500'],
     subsets: ['latin'],
     fallback: ['sans-serif', 'serif'],
 })
@@ -36,7 +36,7 @@ export function TypographyDecoradorH1({
     return (
         <h1
             className={cn(
-                `flex scroll-m-20 items-center gap-2 text-4xl font-medium tracking-tight text-slate-800 before:block before:h-9 before:w-2 before:rounded before:bg-blue-600 before:content-[""] lg:text-5xl ${poppins.className}`,
+                `flex items-center gap-2 text-3xl font-medium leading-none text-slate-800  before:block before:h-7 before:w-2 before:rounded before:bg-blue-600 before:content-[""] @5xl:text-4xl @5xl:before:h-8 ${poppins.className}`,
                 {},
                 className
             )}
@@ -55,7 +55,7 @@ export function TypographyH2({
     return (
         <h2
             className={cn(
-                `scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0 ${poppins.className}`,
+                `scroll-m-20 border-b pb-2 text-3xl font-medium transition-colors first:mt-0 ${poppins.className}`,
                 {},
                 className
             )}
@@ -74,7 +74,7 @@ export function TypographyH3({
     return (
         <h3
             className={cn(
-                `scroll-m-20 text-2xl font-semibold tracking-tight ${poppins.className}`,
+                `scroll-m-20 text-2xl font-medium tracking-tight ${poppins.className}`,
                 {},
                 className
             )}
