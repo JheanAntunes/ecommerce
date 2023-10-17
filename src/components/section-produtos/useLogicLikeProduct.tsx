@@ -15,7 +15,6 @@ function useLogicLikeProduct(id_product: number) {
     const id_product_ref = useRef<number>(id_product)
 
     const shortcut_Condional = useCallback((current_index_value: number) => {
-        console.log('shortcut_Condional')
         return current_index_value === id_product_ref.current
     }, [])
 
@@ -33,7 +32,6 @@ function useLogicLikeProduct(id_product: number) {
     }, [shortcut_Condional, setToggle])
 
     const shortcut_Condional_Dif = (current_index_value: number) => {
-        console.log('shortcut_Condional_Dif')
         return current_index_value !== id_product_ref.current
     }
 
@@ -50,20 +48,10 @@ function useLogicLikeProduct(id_product: number) {
     }
 
     const verificated_IdProduct = () => {
-        console.log('chamando...')
         if (getLocalStorage(chaveLocalStorage.current)) {
-            // const data_Product_Like_LocalStorage: number[] = JSON.parse(
-            //     window.localStorage.getItem(chaveLocalStorage)!
-            // )
-            console.log('A chave existe.')
-
             const data_Product_Like_LocalStorage: number[] = JSON.parse(
                 getLocalStorage(chaveLocalStorage.current)!
             )
-
-            // const id_find_Product = data_Product_Like_LocalStorage.find(
-            //     (current_index_value) => current_index_value === id_product
-            // )
 
             const id_find_Product =
                 data_Product_Like_LocalStorage.find(shortcut_Condional)
