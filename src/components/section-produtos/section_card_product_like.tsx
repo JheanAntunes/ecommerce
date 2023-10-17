@@ -6,13 +6,14 @@ import useLogicLikeProduct from './useLogicLikeProduct'
 
 type Type_Section_card_product_like_Props = {
     id_product: number
+    titleProduct: string
+    image_thumbnail: string
 }
 
-function Section_card_product_like({
-    id_product,
-}: Type_Section_card_product_like_Props) {
-    const { verificated_IdProduct, likeProduct } =
-        useLogicLikeProduct(id_product)
+function Section_card_product_like(
+    props: Type_Section_card_product_like_Props
+) {
+    const { verificated_IdProduct, likeProduct } = useLogicLikeProduct(props)
 
     return (
         <Button
