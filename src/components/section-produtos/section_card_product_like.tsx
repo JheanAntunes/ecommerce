@@ -5,7 +5,6 @@ import { Button } from '../ui/button'
 import useLogicLikeProduct from './useLogicLikeProduct'
 
 type Type_Section_card_product_like_Props = {
-    index: number
     id_product: number
 }
 
@@ -25,8 +24,8 @@ function Section_card_product_like({
         >
             <Heart
                 className={cn(
-                    'text-red-500 @5xl:hover:fill-red-500',
-                    likeProduct ? 'fill-red-500 @5xl:hover:fill-red-600' : false
+                    'text-red-500 transition-colors duration-200 @5xl:hover:fill-red-500',
+                    likeProduct ? 'fill-red-500' : false
                 )}
             />
         </Button>
