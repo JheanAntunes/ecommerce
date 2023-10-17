@@ -2,9 +2,14 @@
 
 import { PropsWithChildren } from 'react'
 import ProviderMenuHamburguer from './ProviderMenuHambur/ProviderMenuHamburguer'
+import ProviderProductLike from './ProviderProductLike/ProviderProductLike'
 
 function ProviderGlobal({ children }: PropsWithChildren) {
-    return <ProviderMenuHamburguer>{children}</ProviderMenuHamburguer>
+    return (
+        <ProviderMenuHamburguer>
+            <ProviderProductLike>{children}</ProviderProductLike>
+        </ProviderMenuHamburguer>
+    )
 }
 
 export default ProviderGlobal
