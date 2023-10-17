@@ -35,12 +35,9 @@ function Section_Card_Produto({
                                     sizes="100vw"
                                 />
                             </div>
-                            <div className="absolute right-0 top-0 -translate-x-1 -translate-y-2">
+                            <div className="absolute right-0 top-0 -translate-y-2 @sm:translate-x-3 @xl:translate-x-2 @6xl:-translate-x-1 @6xl:-translate-y-2">
                                 {/* Headt - Gostei Produto */}
-                                <Section_card_product_like
-                                    index={index}
-                                    id_product={id}
-                                />
+                                <Section_card_product_like id_product={id} />
                             </div>
                         </div>
                         <div className="mt-5">
