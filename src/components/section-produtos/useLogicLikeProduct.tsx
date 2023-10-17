@@ -1,15 +1,26 @@
 'use client'
+import { useToast } from '@/components/ui/use-toast'
 import useToggle from '@/hook/Toggle/useToggle'
+import useContextProductLike from '@/hook/useContextProductLike/useContextProductLike'
 import { getLocalStorage } from '@/utils/utils_getLocalStorage'
 import { setLocalStorage } from '@/utils/utils_setLocalStorage'
 import { useCallback, useEffect, useRef } from 'react'
 
-function useLogicLikeProduct(id_product: number) {
-    const {
-        toggle: likeProduct,
-        shortcut_Set_Toggle_Function,
-        setToggle,
-    } = useToggle()
+type Type_useLogicLikeProduct_Props = {
+    id_product: number
+    titleProduct: string
+    image_thumbnail: string
+}
+
+function useLogicLikeProduct({
+    id_product,
+    image_thumbnail,
+    titleProduct,
+}: Type_useLogicLikeProduct_Props) {
+    const { setQtdHeart } = useContextProductLike()
+    const { toast } = useToast()
+
+    const { toggle: likeProduct, setToggle } = useToggle()
 
     const chaveLocalStorage = useRef<'product-like'>('product-like')
     const id_product_ref = useRef<number>(id_product)
@@ -58,6 +69,12 @@ function useLogicLikeProduct(id_product: number) {
 
             if (id_find_Product) {
                 remove_ProductLike_LocalStorage(data_Product_Like_LocalStorage)
+                //descrement heart
+                setQtdHeart((qtdHeart) => qtdHeart - 1)
+                //message
+                toast({
+                    description: `Você removeu o gostei no ${titleProduct}`,
+                })
                 setToggle(false)
                 return //Parar a execução da função para não repetir o id no array.
             }
@@ -69,7 +86,13 @@ function useLogicLikeProduct(id_product: number) {
                     id_product_ref.current,
                 ])
             )
+            //increment heart
+            setQtdHeart(data_Product_Like_LocalStorage.length + 1)
             setToggle(true)
+            //message
+            toast({
+                description: `Você adicionou o gostei no ${titleProduct}`,
+            })
             return //Parar a execução da função para não continuar e substituir o valor.
         }
         console.log('declarando a chave')
@@ -78,15 +101,17 @@ function useLogicLikeProduct(id_product: number) {
             chaveLocalStorage.current,
             JSON.stringify([id_product_ref.current])
         )
+        setQtdHeart(1)
         setToggle(true)
+        //message
+        toast({
+            description: `Você adicionou o gostei no ${titleProduct}`,
+        })
     }
 
     return {
         verificated_IdProduct,
         likeProduct,
-        chaveLocalStorage,
-        shortcut_Set_Toggle_Function,
-        setToggle,
     }
 }
 
