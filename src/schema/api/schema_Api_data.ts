@@ -20,5 +20,7 @@ export const schema_Api_Data = z.object({
     limit: z.number(),
 })
 
+export const schema_Api_Dynamic_Product = Object_Zod_Product
+
 export type Type_Api_DATA = z.infer<typeof schema_Api_Data>
 export type Type_Api_Product = z.infer<typeof Object_Zod_Product>
