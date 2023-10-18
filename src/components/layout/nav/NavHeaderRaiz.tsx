@@ -1,8 +1,9 @@
-import { Heart, LucideShoppingCart, User2 } from 'lucide-react'
+import { LucideShoppingCart, User2 } from 'lucide-react'
 import Link from 'next/link'
 import LogoNavHeaderRaiz from '../logo/LogoNavHeaderRaiz'
 import Menu_Hamburguer_Toggle from '../MenuHamburguer/Menu_Hamburguer_Toggle'
 import Menu_Open_Click_Close from '../MenuHamburguer/Menu_Open_Click_Close'
+import NavIconHeartQtd from './nav-icon-heart-qtd'
 
 function NavHeaderRaiz() {
     return (
@@ -15,7 +16,7 @@ function NavHeaderRaiz() {
             </Menu_Hamburguer_Toggle>
             <div className="flex items-center gap-5 @xs:hidden @md:flex">
                 <User2 className="text-slate-800" />
-                <Heart className="text-slate-800" />
+                <NavIconHeartQtd />
                 <Link href="cart">
                     {' '}
                     <LucideShoppingCart className="text-slate-800" />

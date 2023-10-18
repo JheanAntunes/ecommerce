@@ -6,9 +6,11 @@ export const product_ImgThumb_Description_Title_formated_Array = (
 ): Type_Data_Image_Description[] => {
     const dataImageDescription = data.products.map((product) => {
         return {
+            id: product.id,
             image_thumbnail: product.thumbnail,
             description: product.description,
             title: product.title,
+            price: product.price,
         }
     })
     return dataImageDescription
