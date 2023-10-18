@@ -85,6 +85,25 @@ export function TypographyH3({
     )
 }
 
+export function TypographyDecoradorH3({
+    className,
+    children,
+    ...props
+}: Type_Typography) {
+    return (
+        <h3
+            className={cn(
+                `flex items-center gap-2 text-2xl font-medium leading-none text-slate-800  before:block before:h-7 before:w-2 before:rounded before:bg-blue-600 before:content-[""] @5xl:text-4xl @5xl:before:h-8 ${poppins.className}`,
+                {},
+                className
+            )}
+            {...props}
+        >
+            {children}
+        </h3>
+    )
+}
+
 export function TypographyH4({
     className,
     children,
