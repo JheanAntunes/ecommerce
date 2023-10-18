@@ -2,12 +2,16 @@ import {
     Accordion,
     AccordionContent,
     AccordionItem,
-    AccordionTrigger
+    AccordionTrigger,
 } from '@/components/ui/accordion'
 
 function Footer_Section_Compra_Segura_Accordion() {
     return (
-        <Accordion type="single" collapsible className="w-full min-w-[500px]">
+        <Accordion
+            type="single"
+            collapsible
+            className="w-full min-w-full @5xl:min-w-[500px]"
+        >
             <AccordionItem value="item-1">
                 <AccordionTrigger>Segurança</AccordionTrigger>
                 <AccordionContent>
