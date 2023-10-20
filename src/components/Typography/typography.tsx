@@ -47,6 +47,25 @@ export function TypographyDecoradorH1({
     )
 }
 
+export function TypographyDecoradorH2({
+    className,
+    children,
+    ...props
+}: Type_Typography) {
+    return (
+        <h2
+            className={cn(
+                `flex scroll-m-20 items-center gap-2 text-3xl font-medium leading-none text-slate-800 transition-colors before:block before:h-7 before:w-2 before:rounded before:bg-blue-600 before:content-[""] first:mt-0 @2xl:border-b @2xl:pb-2 @5xl:text-4xl @5xl:before:h-8 ${poppins.className}`,
+                {},
+                className
+            )}
+            {...props}
+        >
+            {children}
+        </h2>
+    )
+}
+
 export function TypographyH2({
     className,
     children,
@@ -129,14 +148,7 @@ export function TypographyP({
     ...props
 }: Type_Typography) {
     return (
-        <p
-            className={cn(
-                'leading-7 [&:not(:first-child)]:mt-6',
-                {},
-                className
-            )}
-            {...props}
-        >
+        <p className={cn('leading-6', {}, className)} {...props}>
             {children}
         </p>
     )
@@ -149,7 +161,11 @@ export function TypographySmall({
 }: Type_Typography) {
     return (
         <small
-            className={cn('text-sm font-medium leading-none', {}, className)}
+            className={cn(
+                'text-sm font-normal leading-none text-slate-600',
+                {},
+                className
+            )}
             {...props}
         >
             {children}
