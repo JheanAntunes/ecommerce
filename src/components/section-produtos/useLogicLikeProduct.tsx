@@ -6,7 +6,7 @@ import { getLocalStorage } from '@/utils/utils_getLocalStorage'
 import { setLocalStorage } from '@/utils/utils_setLocalStorage'
 import { useCallback, useEffect, useRef } from 'react'
 
-type Type_useLogicLikeProduct_Props = {
+export type Type_useLogicLikeProduct_Props = {
     id_product: number
     titleProduct: string
     image_thumbnail: string
@@ -112,6 +112,9 @@ function useLogicLikeProduct({
     return {
         verificated_IdProduct,
         likeProduct,
+        setToggle,
+        chaveLocalStorage: chaveLocalStorage.current,
+        shortcut_Condional,
     }
 }
 
