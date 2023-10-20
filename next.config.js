@@ -2,6 +2,7 @@
 const nextConfig = {
     images: {
         domains: ['i.dummyjson.com'],
+        dangerouslyAllowSVG: true,
     },
 }
 
