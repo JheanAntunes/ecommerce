@@ -12,6 +12,39 @@ const roboto = Roboto({ subsets: ['latin'], weight: ['400', '500'] })
 export const metadata: Metadata = {
     title: 'E-commerce',
     description: 'Um projeto para praticar.',
+    generator: 'Next.js',
+    applicationName: 'E-commerce',
+    referrer: 'origin-when-cross-origin',
+    keywords: ['Next.js', 'React', 'JavaScript'],
+    authors: [
+        {
+            name: 'Jhean',
+            url: 'https://www.linkedin.com/in/jhean-antunes-lopes-284994259/',
+        },
+    ],
+    colorScheme: 'only light',
+    creator: 'Jhean',
+    publisher: 'Sebastian Markbåge',
+    formatDetection: {
+        email: false,
+        address: false,
+        telephone: false,
+    },
+
+    robots: {
+        index: false,
+        follow: true,
+        nocache: true,
+        googleBot: {
+            index: true,
+            follow: false,
+            noimageindex: true,
+            'max-video-preview': -1,
+            'max-image-preview': 'large',
+            'max-snippet': -1,
+        },
+    },
+    themeColor: 'white',
 }
 
 export default function RootLayout({
