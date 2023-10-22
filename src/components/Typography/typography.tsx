@@ -142,6 +142,25 @@ export function TypographyH4({
     )
 }
 
+export function TypographyDecoradorH4({
+    className,
+    children,
+    ...props
+}: Type_Typography) {
+    return (
+        <h4
+            className={cn(
+                `flex scroll-m-20 items-center gap-2 text-base font-medium tracking-tight before:block before:h-4 before:w-2 before:rounded before:bg-blue-600 before:content-[""] ${poppins.className}`,
+                {},
+                className
+            )}
+            {...props}
+        >
+            {children}
+        </h4>
+    )
+}
+
 export function TypographyP({
     className,
     children,
