@@ -5,38 +5,12 @@ import Product_Qtd_Forma_Pagamento from '@/components/product-dinamico/product-q
 import { TypographySmall } from '@/components/Typography/typography'
 import { Type_Api_Product } from '@/schema/api/schema_Api_data'
 import { ChevronRight } from 'lucide-react'
-import { Metadata, ResolvingMetadata } from 'next'
 
 export type Type_variavel_url = string | string[] | undefined
 
 type Type_PageProductDynamic_Props = {
     params: { productId: string }
     searchParams: { [key: string]: Type_variavel_url }
-}
-
-export async function generateMetadata(
-    { params, searchParams }: Type_PageProductDynamic_Props,
-    parent: ResolvingMetadata
-): Promise<Metadata> {
-    // read route params
-    const id = params.productId
-
-    // fetch data
-    const product: Type_Api_Product = await fetch(
-        `http://localhost:3000/api/GET_DATA_PRODUCTS/${id}`
-    )
-        .then((res) => res.json())
-        .catch((e) => {
-            console.log('generateMetadata ' + e)
-        })
-
-    // optionally access and extend (rather than replace) parent metadata
-    const previousImages = (await parent).openGraph?.images || []
-
-    return {
-        title: product.title,
-        description: product.description,
-    }
 }
 
 async function PageProductDynamic({
@@ -51,7 +25,7 @@ async function PageProductDynamic({
     const product: Type_Api_Product = await response.json()
     let variavel_url_image_index: undefined | string | string[] =
         searchParams.image_index
-
+    console.log(product.title)
     return (
         <section className="col-start-2 col-end-2 mt-5">
             <Localidade_Pathname titleProduct={product.title}>
