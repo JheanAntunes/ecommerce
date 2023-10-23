@@ -24,7 +24,12 @@ function CartDetalhesProduct({
             <TypographyDecoradorH2 className="text-lg before:h-4 @5xl:text-2xl @5xl:before:h-6">
                 {name}
             </TypographyDecoradorH2>
-            <TypographySmall>{price}</TypographySmall>
+            <TypographySmall>
+                {price.toLocaleString('pt-BR', {
+                    style: 'currency',
+                    currency: 'BRL',
+                })}
+            </TypographySmall>
             <TypographySmall className="flex gap-2">
                 <RatingStar rating={rating} />{' '}
             </TypographySmall>
