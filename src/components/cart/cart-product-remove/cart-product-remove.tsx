@@ -1,3 +1,4 @@
+'use client'
 import { Button } from '@/components/ui/button'
 import {
     Dialog,
@@ -11,6 +12,7 @@ import {
 } from '@/components/ui/dialog'
 import { useToast } from '@/components/ui/use-toast'
 import { Trash2 } from 'lucide-react'
+import { useShoppingCart } from 'use-shopping-cart'
 
 type Type_CartProductRemove_Props = {
     id: string
@@ -20,12 +22,16 @@ type Type_CartProductRemove_Props = {
 function CartProductRemove({ id, name }: Type_CartProductRemove_Props) {
     const { toast } = useToast()
 
+    const { removeItem } = useShoppingCart()
+
     const handleClickRemoveProduct = () => {
         //message remove product.
         toast({
             title: `${name}`,
             description: `Se desejar, você pode retornar à página de produto e adicionar novamente o ${name} no carrinho.`,
         })
+        //remove product
+        removeItem(id)
     }
     return (
         <div className="absolute right-0 top-0 -translate-y-3 translate-x-2">
