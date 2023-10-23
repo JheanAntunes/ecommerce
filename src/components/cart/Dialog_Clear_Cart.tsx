@@ -11,12 +11,15 @@ import {
     DialogTrigger,
 } from '@/components/ui/dialog'
 import { useToast } from '@/components/ui/use-toast'
+import { formated_CartDetails_Object_value } from '@/utils/formated_CartDetails_Object_value'
 import { Trash2 } from 'lucide-react'
 import { useShoppingCart } from 'use-shopping-cart'
 
 function Dialog_Clear_Cart() {
     const { toast } = useToast()
-    const { clearCart } = useShoppingCart()
+    const { clearCart, cartDetails } = useShoppingCart()
+
+    const productCart = formated_CartDetails_Object_value(cartDetails)
 
     const handleClick_Clear_Cart = () => {
         toast({
@@ -35,7 +38,7 @@ function Dialog_Clear_Cart() {
                 asChild
             >
                 <DialogTrigger>
-                    Remover todos os produtos{' '}
+                    Limpar o carrinho{' '}
                     <Trash2
                         className="text-red-500 @5xl:hover:text-red-700"
                         height={20}
@@ -67,7 +70,19 @@ function Dialog_Clear_Cart() {
                         <Button
                             type="button"
                             className="flex-1 bg-blue-500 hover:bg-blue-600"
-                            onClick={handleClick_Clear_Cart}
+                            onClick={() => {
+                                //Mensagem para o usuário ao clicar no botão limpar carrinho quando ele estiver vazio.
+                                if (!productCart.length) {
+                                    toast({
+                                        title: `Carrinho vazio.`,
+                                        description: `Você pode voltar na página de produtos e adicionar no carrinho para limpar.`,
+                                        variant: 'destructive',
+                                    })
+                                    //parar de executar essa função.
+                                    return
+                                }
+                                handleClick_Clear_Cart()
+                            }}
                         >
                             Sim
                         </Button>
