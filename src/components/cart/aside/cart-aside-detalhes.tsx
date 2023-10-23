@@ -4,10 +4,10 @@ import { formated_CartDetails_Object_value } from '@/utils/formated_CartDetails_
 import { useShoppingCart } from 'use-shopping-cart'
 
 function CartAsideDetalhes() {
-    const { formattedTotalPrice, cartCount, cartDetails } = useShoppingCart()
+    const { totalPrice, cartCount, cartDetails } = useShoppingCart()
 
     const full_Discount = formated_CartDetails_Object_value(cartDetails).reduce(
-        (acc, cur) => acc + cur.discountPercentage,
+        (acc, cur) => acc + cur.discountPercentage * cur.quantity,
         0
     )
 
@@ -17,7 +17,10 @@ function CartAsideDetalhes() {
                 <TypographySmall className="flex gap-2">
                     Valor total:{' '}
                     <span className="text-slate-800">
-                        {formattedTotalPrice}
+                        {totalPrice.toLocaleString('pt-BR', {
+                            style: 'currency',
+                            currency: 'BRL',
+                        })}
                     </span>
                 </TypographySmall>
             </li>
@@ -31,7 +34,10 @@ function CartAsideDetalhes() {
                 <TypographySmall className="flex gap-2">
                     Desconto total:{' '}
                     <span className="text-slate-800">
-                        R${full_Discount.toFixed(2)}
+                        {full_Discount.toLocaleString('pt-BR', {
+                            style: 'currency',
+                            currency: 'BRL',
+                        })}
                     </span>
                 </TypographySmall>
             </li>
