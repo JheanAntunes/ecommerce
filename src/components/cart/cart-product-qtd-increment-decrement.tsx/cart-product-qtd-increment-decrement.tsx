@@ -1,7 +1,7 @@
 'use client'
 import {
     TypographyDecoradorH3,
-    TypographySmall
+    TypographySmall,
 } from '@/components/Typography/typography'
 import { Button } from '@/components/ui/button'
 import { useToast } from '@/components/ui/use-toast'
@@ -52,10 +52,10 @@ function Cart_Product_Qtd_Increment_Decrement({
 
     return (
         <div className="flex flex-col gap-5">
-            <TypographyDecoradorH3 className="text-lg before:h-4 border-b pb-3 @5xl:text-xl @5xl:before:h-5">
+            <TypographyDecoradorH3 className="border-b pb-3 text-lg before:h-4 @5xl:text-xl @5xl:before:h-5">
                 Quantidade
             </TypographyDecoradorH3>
-            <div className="flex items-center gap-5">
+            <div className="flex items-center justify-between gap-5">
                 <Button
                     className="bg-transparent hover:bg-slate-100"
                     variant="outline"
