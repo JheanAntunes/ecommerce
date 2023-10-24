@@ -5,7 +5,7 @@ import SvgMasterCard from '../../../svgs/mastercard.svg'
 import SvgPix from '../../../svgs/pix-106.svg'
 import SvgVisa from '../../../svgs/visa.svg'
 
-function Product_Qtd_Forma_Pagamento() {
+function Product_Forma_Pagamento() {
     return (
         <div className="mt-5 flex flex-col gap-5 @2xl:col-span-2 @5xl:col-span-1">
             <section className="flex flex-col gap-5">
@@ -47,4 +47,4 @@ function Product_Qtd_Forma_Pagamento() {
     )
 }
 
-export default Product_Qtd_Forma_Pagamento
+export default Product_Forma_Pagamento
