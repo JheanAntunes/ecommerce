@@ -4,14 +4,8 @@ import SvgBoleto from '../../../svgs/boleto.svg'
 import SvgMasterCard from '../../../svgs/mastercard.svg'
 import SvgPix from '../../../svgs/pix-106.svg'
 import SvgVisa from '../../../svgs/visa.svg'
-type Type_Product_Qtd_Forma_Pagamento_Props = {
-    price: number
-    id: string
-    name: string
-}
-function Product_Qtd_Forma_Pagamento({
-    price,
-}: Type_Product_Qtd_Forma_Pagamento_Props) {
+
+function Product_Qtd_Forma_Pagamento() {
     return (
         <div className="mt-5 flex flex-col gap-5 @2xl:col-span-2 @5xl:col-span-1">
             <section className="flex flex-col gap-5">
