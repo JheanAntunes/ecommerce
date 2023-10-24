@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { slideVariants } from '../framer/slider/slideVariants'
 import Product_Detalhes_Like from '../product-dinamico/product-detalhes/product-detalhes-like/product_detalhes_like'
-import Cart_Product_Qtd_Increment_Decrement from './cart-product-qtd-increment-decrement.tsx/cart-product-qtd-increment-decrement'
+import WrapperProductQtdIncrementDecrement from './cart-product-qtd-increment-decrement.tsx/wrapper-product-qtd-increment-decrement'
 import CartProductRemove from './cart-product-remove/cart-product-remove'
 import CartDetalhesProduct from './detalhes-product/cart-detalhes-product'
 
@@ -56,7 +56,7 @@ function Cart_Product_Card({
                 category={category}
                 brand={brand}
             />
-            <Cart_Product_Qtd_Increment_Decrement
+            <WrapperProductQtdIncrementDecrement
                 id={id}
                 quantity={quantity}
                 name={name}
