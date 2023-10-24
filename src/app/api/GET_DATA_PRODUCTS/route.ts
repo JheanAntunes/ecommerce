@@ -7,6 +7,7 @@ export async function GET(req: NextRequest) {
         if (!response.ok) throw new Error('ERROR:GET_PRODUCTS')
         const data: Type_Api_DATA = await response.json()
         const validatedData = schema_Api_Data.safeParse(data)
+        console.log(data.products[0].price)
         if (!validatedData.success)
             throw new Error('ERROR: ', validatedData.error)
         return NextResponse.json(data)

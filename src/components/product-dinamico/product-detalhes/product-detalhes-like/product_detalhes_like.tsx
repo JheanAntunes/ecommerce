@@ -1,23 +1,29 @@
 'use client'
 import useLogicLikeProduct, {
-    Type_useLogicLikeProduct_Props,
+    Type_useLogicLikeProduct_Props
 } from '@/components/section-produtos/useLogicLikeProduct'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { getLocalStorage } from '@/utils/utils_getLocalStorage'
 import { Heart } from 'lucide-react'
-import { useEffect } from 'react'
+import { ComponentProps, useEffect } from 'react'
 
-type Type_Product_Detalhes_Like_Props = Type_useLogicLikeProduct_Props
+type Type_Product_Detalhes_Like_Props = Type_useLogicLikeProduct_Props &
+    ComponentProps<'div'>
 
-function Product_Detalhes_Like(props: Type_Product_Detalhes_Like_Props) {
+function Product_Detalhes_Like({
+    id_product,
+    image_thumbnail,
+    titleProduct,
+    className,
+}: Type_Product_Detalhes_Like_Props) {
     const {
         likeProduct,
         verificated_IdProduct,
         setToggle,
         chaveLocalStorage,
         shortcut_Condional,
-    } = useLogicLikeProduct(props)
+    } = useLogicLikeProduct({ id_product, image_thumbnail, titleProduct })
 
     useEffect(() => {
         if (getLocalStorage(chaveLocalStorage)) {
@@ -32,7 +38,7 @@ function Product_Detalhes_Like(props: Type_Product_Detalhes_Like_Props) {
     }, [setToggle, chaveLocalStorage, shortcut_Condional])
 
     return (
-        <div>
+        <div className={cn("",{},className)}>
             <Button
                 size="icon"
                 className="bg-transparent hover:bg-transparent"
