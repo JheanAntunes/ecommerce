@@ -5,12 +5,32 @@ import Localidade_Pathname from '@/components/product-dinamico/product-localidad
 import { TypographySmall } from '@/components/Typography/typography'
 import { Type_Api_Product } from '@/schema/api/schema_Api_data'
 import { ChevronRight } from 'lucide-react'
+import { Metadata } from 'next'
 
 export type Type_variavel_url = string | string[] | undefined
 
 type Type_PageProductDynamic_Props = {
     params: { productId: string }
     searchParams: { [key: string]: Type_variavel_url }
+}
+
+type Type_PageParams = Omit<Type_PageProductDynamic_Props, 'searchParams'>
+
+// Dynamic metadata
+export async function generateMetadata({
+    params,
+}: Type_PageParams): Promise<Metadata> {
+    const response = await fetch(
+        `http://localhost:3000/api/GET_DATA_PRODUCTS/${params.productId}`
+    )
+    if (!response.ok) throw new Error('Error:PageProductDynamic')
+
+    const product: Type_Api_Product = await response.json()
+
+    return {
+        title: product.title,
+        description: product.description,
+    }
 }
 
 async function PageProductDynamic({
