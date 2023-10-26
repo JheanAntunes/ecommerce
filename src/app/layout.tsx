@@ -4,10 +4,20 @@ import Main from '@/components/layout/Main/Main'
 import { Toaster } from '@/components/ui/toaster'
 import ProviderGlobal from '@/providers/ProviderGlobal'
 import type { Metadata } from 'next'
-import { Roboto } from 'next/font/google'
+import { Poppins, Roboto } from 'next/font/google'
 import '../styles/globals.css'
 
-const roboto = Roboto({ subsets: ['latin'], weight: ['400', '500'] })
+const roboto = Roboto({
+    subsets: ['latin'],
+    weight: ['400', '500'],
+    variable: '--font-roboto',
+})
+
+const poppins = Poppins({
+    subsets: ['latin'],
+    weight: ['400', '500'],
+    variable: '--font-poppins',
+})
 
 export const metadata: Metadata = {
     title: 'E-commerce',
@@ -53,8 +63,8 @@ export default function RootLayout({
     children: React.ReactNode
 }) {
     return (
-        <html lang="pt-br">
-            <body className={roboto.className + ' overflow-x-hidden'}>
+        <html lang="pt-br" className={`${roboto.variable} ${poppins.variable}`}>
+            <body className="font-roboto">
                 <ProviderGlobal>
                     <HeaderRaiz />
                     <Main>{children}</Main>

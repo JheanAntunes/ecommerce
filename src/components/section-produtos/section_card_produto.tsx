@@ -79,7 +79,7 @@ function Section_Card_Produto({
                         </div>
                         <div className="mt-5 flex flex-col gap-5">
                             <Button
-                                className={`items-center gap-2 bg-blue-500 hover:bg-blue-600`}
+                                className={`font-poppins items-center gap-2 bg-blue-500 font-medium hover:bg-blue-600`}
                                 asChild
                             >
                                 <Link href={`/product/${id}`}>

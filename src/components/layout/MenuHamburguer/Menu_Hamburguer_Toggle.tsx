@@ -19,17 +19,18 @@ function Menu_Hamburguer_Toggle({ children }: PropsWithChildren) {
                 {toggle ? (
                     <X
                         className={
-                            'animate-fade animate-ease-linear text-slate-800'
+                            'animate-fade text-slate-800 animate-ease-linear'
                         }
                     />
                 ) : (
-                    <Menu className="animate-fade animate-ease-linear text-slate-800" />
+                    <Menu className="animate-fade text-slate-800 animate-ease-linear" />
                 )}
             </Button_Hamburguer>
 
             {toggle && (
                 <Wrapper_Menu_Hamburguer
                     shortcut_Set_Toggle_Function={shortcut_Set_Toggle_Function}
+                    toggle={toggle}
                 >
                     {children}
                 </Wrapper_Menu_Hamburguer>

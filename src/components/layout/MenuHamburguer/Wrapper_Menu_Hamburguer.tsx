@@ -1,8 +1,10 @@
 'use client'
 import React from 'react'
+import Menu_Content_Frame from './Menu_Content_Frame'
 
 type Type_Wrapper_Menu_HamburguerProps = React.PropsWithChildren & {
     shortcut_Set_Toggle_Function: () => void
+    toggle: boolean
 }
 
 function Wrapper_Menu_Hamburguer({
@@ -17,10 +19,10 @@ function Wrapper_Menu_Hamburguer({
 
     return (
         <div
-            className="absolute inset-0 bg-background/60 backdrop-blur-sm"
+            className="absolute inset-0 z-30 h-screen animate-fade-up bg-background/60 backdrop-blur-sm"
             onClick={handle_Click_Out_Menu_Close}
         >
-            {children}
+            <Menu_Content_Frame>{children}</Menu_Content_Frame>
         </div>
     )
 }
