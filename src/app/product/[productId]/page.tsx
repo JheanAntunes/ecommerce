@@ -21,7 +21,7 @@ export async function generateMetadata({
     params,
 }: Type_PageParams): Promise<Metadata> {
     const response = await fetch(
-        `http://localhost:3000/api/GET_DATA_PRODUCTS/${params.productId}`
+        `${process.env.domain}/api/GET_DATA_PRODUCTS/${params.productId}`
     )
     if (!response.ok) throw new Error('Error:PageProductDynamic')
 
@@ -38,7 +38,7 @@ async function PageProductDynamic({
     searchParams,
 }: Type_PageProductDynamic_Props) {
     const response = await fetch(
-        `http://localhost:3000/api/GET_DATA_PRODUCTS/${productId}`
+        `${process.env.domain}/api/GET_DATA_PRODUCTS/${productId}`
     )
     if (!response.ok) throw new Error('Error:PageProductDynamic')
 
