@@ -21,7 +21,7 @@ function WrapperSlider({ dataImageDescription }: Type_WrapperSlider_Props) {
 
     return (
         <div className="col-start-2 col-end-2 mt-10 flex flex-col gap-5 overflow-hidden">
-            <div className="relative flex max-w-full flex-col items-center">
+            <div className="relative grid grid-cols-1 grid-rows-[320px]">
                 {/* Img & controls right/left */}
                 <Wrapper_Image_Slider
                     currentImg={currentImg}
