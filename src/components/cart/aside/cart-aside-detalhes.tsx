@@ -22,7 +22,7 @@ function CartAsideDetalhes() {
                                 style: 'currency',
                                 currency: 'BRL',
                             })}
-                        R$: 0
+                        {!totalPrice && <span>R$: 0</span>}
                     </span>
                 </TypographySmall>
             </li>
