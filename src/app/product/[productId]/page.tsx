@@ -1,10 +1,11 @@
 import Product_Detalhes from '@/components/product-dinamico/product-detalhes/product_detalhes'
+import Product_Qtd_Forma_Pagamento from '@/components/product-dinamico/product-forma-pagamento/product_forma_pagamento'
 import Product_Images from '@/components/product-dinamico/product-images/product_images'
 import Localidade_Pathname from '@/components/product-dinamico/product-localidade-pathname/localidade_pathname'
-import Product_Qtd_Forma_Pagamento from '@/components/product-dinamico/product-qtd-forma-pagamento/product_qtd_forma_pagamento'
 import { TypographySmall } from '@/components/Typography/typography'
 import { Type_Api_Product } from '@/schema/api/schema_Api_data'
 import { ChevronRight } from 'lucide-react'
+import { Metadata } from 'next'
 
 export type Type_variavel_url = string | string[] | undefined
 
@@ -13,19 +14,37 @@ type Type_PageProductDynamic_Props = {
     searchParams: { [key: string]: Type_variavel_url }
 }
 
+type Type_PageParams = Omit<Type_PageProductDynamic_Props, 'searchParams'>
+
+// Dynamic metadata
+export async function generateMetadata({
+    params,
+}: Type_PageParams): Promise<Metadata> {
+    const response = await fetch(
+        `${process.env.domain}/api/GET_DATA_PRODUCTS/${params.productId}`
+    )
+    if (!response.ok) throw new Error('Error:PageProductDynamic')
+
+    const product: Type_Api_Product = await response.json()
+
+    return {
+        title: product.title,
+        description: product.description,
+    }
+}
+
 async function PageProductDynamic({
     params: { productId },
     searchParams,
 }: Type_PageProductDynamic_Props) {
     const response = await fetch(
-        `http://localhost:3000/api/GET_DATA_PRODUCTS/${productId}`
+        `${process.env.domain}/api/GET_DATA_PRODUCTS/${productId}`
     )
     if (!response.ok) throw new Error('Error:PageProductDynamic')
 
     const product: Type_Api_Product = await response.json()
     let variavel_url_image_index: undefined | string | string[] =
         searchParams.image_index
-    console.log(product.title)
     return (
         <section className="col-start-2 col-end-2 mt-5">
             <Localidade_Pathname titleProduct={product.title}>
@@ -41,7 +60,7 @@ async function PageProductDynamic({
                     variavel_url_image_index={variavel_url_image_index}
                 />
                 <Product_Detalhes {...product} />
-                <Product_Qtd_Forma_Pagamento price={product.price} />
+                <Product_Qtd_Forma_Pagamento />
             </div>
         </section>
     )

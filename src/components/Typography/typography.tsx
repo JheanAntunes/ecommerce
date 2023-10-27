@@ -1,11 +1,4 @@
 import { cn } from '@/lib/utils'
-import { Poppins } from 'next/font/google'
-
-const poppins = Poppins({
-    weight: ['500'],
-    subsets: ['latin'],
-    fallback: ['sans-serif', 'serif'],
-})
 
 type Type_Typography = React.ComponentProps<'h1'>
 
@@ -17,7 +10,7 @@ export function TypographyH1({
     return (
         <h1
             className={cn(
-                `scroll-m-20 text-4xl font-medium tracking-tight lg:text-5xl ${poppins.className}`,
+                `font-poppins scroll-m-20 text-4xl font-medium tracking-tight lg:text-5xl`,
                 {},
                 className
             )}
@@ -36,7 +29,7 @@ export function TypographyDecoradorH1({
     return (
         <h1
             className={cn(
-                `flex items-center gap-2 text-3xl font-medium leading-none text-slate-800  before:block before:h-7 before:w-2 before:rounded before:bg-blue-600 before:content-[""] @5xl:text-4xl @5xl:before:h-8 ${poppins.className}`,
+                `font-poppins flex items-center gap-2 text-3xl font-medium leading-none  text-slate-800 before:block before:h-7 before:w-2 before:rounded before:bg-blue-600 before:content-[""] @5xl:text-4xl @5xl:before:h-8`,
                 {},
                 className
             )}
@@ -55,7 +48,7 @@ export function TypographyDecoradorH2({
     return (
         <h2
             className={cn(
-                `flex scroll-m-20 items-center gap-2 text-3xl font-medium leading-none text-slate-800 transition-colors before:block before:h-7 before:w-2 before:rounded before:bg-blue-600 before:content-[""] first:mt-0 @2xl:border-b @2xl:pb-2 @5xl:text-4xl @5xl:before:h-8 ${poppins.className}`,
+                `font-poppins flex scroll-m-20 items-center gap-2 text-3xl font-medium leading-none text-slate-800 transition-colors before:block before:h-7 before:w-2 before:rounded before:bg-blue-600 before:content-[""] first:mt-0 @2xl:border-b @2xl:pb-2 @5xl:text-4xl @5xl:before:h-8`,
                 {},
                 className
             )}
@@ -74,7 +67,7 @@ export function TypographyH2({
     return (
         <h2
             className={cn(
-                `scroll-m-20 border-b pb-2 text-3xl font-medium transition-colors first:mt-0 ${poppins.className}`,
+                `font-poppins scroll-m-20 border-b pb-2 text-3xl font-medium transition-colors first:mt-0`,
                 {},
                 className
             )}
@@ -93,7 +86,7 @@ export function TypographyH3({
     return (
         <h3
             className={cn(
-                `scroll-m-20 text-2xl font-medium tracking-tight ${poppins.className}`,
+                `font-poppins scroll-m-20 text-2xl font-medium tracking-tight`,
                 {},
                 className
             )}
@@ -112,7 +105,7 @@ export function TypographyDecoradorH3({
     return (
         <h3
             className={cn(
-                `flex items-center gap-2 text-2xl font-medium leading-none text-slate-800  before:block before:h-7 before:w-2 before:rounded before:bg-blue-600 before:content-[""] @5xl:text-4xl @5xl:before:h-8 ${poppins.className}`,
+                `font-poppins flex items-center gap-2 text-2xl font-medium leading-none  text-slate-800 before:block before:h-7 before:w-2 before:rounded before:bg-blue-600 before:content-[""] @5xl:text-4xl @5xl:before:h-8`,
                 {},
                 className
             )}
@@ -131,7 +124,7 @@ export function TypographyH4({
     return (
         <h4
             className={cn(
-                `scroll-m-20 text-xl font-semibold tracking-tight ${poppins.className}`,
+                `font-poppins scroll-m-20 text-xl font-semibold tracking-tight`,
                 {},
                 className
             )}
@@ -150,7 +143,7 @@ export function TypographyDecoradorH4({
     return (
         <h4
             className={cn(
-                `flex scroll-m-20 items-center gap-2 text-base font-medium tracking-tight before:block before:h-4 before:w-2 before:rounded before:bg-blue-600 before:content-[""] ${poppins.className}`,
+                `font-poppins flex scroll-m-20 items-center gap-2 text-base font-medium tracking-tight before:block before:h-4 before:w-2 before:rounded before:bg-blue-600 before:content-[""]`,
                 {},
                 className
             )}

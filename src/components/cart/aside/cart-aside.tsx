@@ -5,7 +5,7 @@ import CartAsideDetalhes from './cart-aside-detalhes'
 
 function CartAside() {
     return (
-        <aside className="sticky top-0 z-20 flex h-72 flex-col gap-5 rounded-xl border p-5 shadow    @4xl:flex">
+        <aside className="flex h-72 flex-col gap-5 rounded-xl border p-5 shadow @4xl:sticky @4xl:top-0 @4xl:z-20">
             <TypographyDecoradorH4>Resumo</TypographyDecoradorH4>
             <CartAsideDetalhes />
             <CartAsideButtonPagamento />

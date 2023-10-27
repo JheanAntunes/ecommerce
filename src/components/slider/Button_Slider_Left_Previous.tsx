@@ -13,7 +13,7 @@ function Button_Slider_Left_Previous(props: ButtonProps) {
             <span className="sr-only">
                 Pular para imagem próxima imagem do lado esquerdo do carrossel
             </span>
-            <ArrowLeft className="transition-transform hover:-translate-x-1" />
+            <ArrowLeft className="text-blue-500 transition-transform hover:-translate-x-1" />
         </Button>
     )
 }

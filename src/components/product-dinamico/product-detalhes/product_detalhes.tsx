@@ -1,4 +1,5 @@
 import RatingStar from '@/components/ratingStart/ratingStar'
+import Section_Card_Product_Add_Cart from '@/components/section-produtos/section_card_product_add_cart'
 import {
     TypographyDecoradorH1,
     TypographyP,
@@ -6,7 +7,8 @@ import {
 } from '@/components/Typography/typography'
 import { Button } from '@/components/ui/button'
 import { Type_Api_Product } from '@/schema/api/schema_Api_data'
-import { ShoppingCart, Truck } from 'lucide-react'
+import { Type_Product_Cart } from '@/types/cart'
+import { Truck } from 'lucide-react'
 import Product_Detalhes_Like from './product-detalhes-like/product_detalhes_like'
 
 function Product_Detalhes({
@@ -16,6 +18,7 @@ function Product_Detalhes({
     brand,
     stock,
     rating,
+    category,
     description,
     id,
     thumbnail,
@@ -48,17 +51,24 @@ function Product_Detalhes({
                 Comprar
                 <Truck className="text-slate-50" height={20} width={20} />
             </Button>
-            <Button
-                className="items-center gap-2 bg-transparent text-slate-700 hover:bg-transparent"
-                variant="outline"
-            >
-                Adicionar
-                <ShoppingCart
-                    className="text-slate-700"
-                    height={20}
-                    width={20}
-                />
-            </Button>
+            <Section_Card_Product_Add_Cart
+                product={
+                    {
+                        brand,
+                        category,
+                        currency: 'BRL',
+                        description,
+                        rating,
+                        stock,
+                        discountPercentage,
+                        id: id.toString(),
+                        image: thumbnail,
+                        sku: id.toString(),
+                        name: title,
+                        price,
+                    } as Type_Product_Cart
+                }
+            />
         </div>
     )
 }

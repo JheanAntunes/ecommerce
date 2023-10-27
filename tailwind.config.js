@@ -8,6 +8,10 @@ module.exports = {
         './src/**/*.{ts,tsx}',
     ],
     theme: {
+        fontFamily: {
+            roboto: 'var(--font-roboto)',
+            poppins: 'var(--font-poppins)',
+        },
         container: {
             center: true,
             padding: '2rem',

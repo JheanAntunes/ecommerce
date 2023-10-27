@@ -4,52 +4,19 @@ import {
     TypographySmall,
 } from '@/components/Typography/typography'
 import { Button } from '@/components/ui/button'
-import { useToast } from '@/components/ui/use-toast'
 import { Minus, Plus } from 'lucide-react'
-import { useShoppingCart } from 'use-shopping-cart'
 
-type Type_Cart_Product_Qtd_Increment_Decrement_Props = {
-    id: string
+type Type_Product_Qtd_Increment_Decrement_Props = {
+    handleClickIncrement: () => void
     quantity: number
-    name: string
+    handleClickDecrement: () => void
 }
 
-function Cart_Product_Qtd_Increment_Decrement({
-    id,
+function Product_Qtd_Increment_Decrement({
+    handleClickDecrement,
+    handleClickIncrement,
     quantity,
-    name,
-}: Type_Cart_Product_Qtd_Increment_Decrement_Props) {
-    const { incrementItem, decrementItem } = useShoppingCart()
-    const { toast } = useToast()
-
-    const handleClickIncrement = () => {
-        //message
-        toast({
-            title: `${name}`,
-            description: `Você adicionou mais um ${name}.`,
-        })
-        //increment product.
-        incrementItem(id)
-    }
-
-    const handleClickDecrement = () => {
-        if (quantity === 1) {
-            toast({
-                title: `Quero remover o ${name}.`,
-                description: `Por favor, se quiser removê-lo do carrinho, clique no ícone da lixeira.`,
-                variant: 'destructive',
-            })
-            return //parar execução da função.
-        }
-        //message decrement
-        toast({
-            title: `${name}`,
-            description: `Você reduziu mais um ${name}.`,
-        })
-        //decrement product.
-        decrementItem(id)
-    }
-
+}: Type_Product_Qtd_Increment_Decrement_Props) {
     return (
         <div className="flex flex-col gap-5">
             <TypographyDecoradorH3 className="border-b pb-3 text-lg before:h-4 @5xl:text-xl @5xl:before:h-5">
@@ -80,4 +47,4 @@ function Cart_Product_Qtd_Increment_Decrement({
     )
 }
 
-export default Cart_Product_Qtd_Increment_Decrement
+export default Product_Qtd_Increment_Decrement

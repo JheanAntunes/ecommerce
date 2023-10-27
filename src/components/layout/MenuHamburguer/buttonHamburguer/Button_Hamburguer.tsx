@@ -1,4 +1,5 @@
 import { Button, ButtonProps } from '@/components/ui/button'
+import { cn } from '@/lib/utils'
 
 type Type_Button_HamburguerProps = {
     toggle: boolean
@@ -19,7 +20,12 @@ function Button_Hamburguer({
             size="icon"
             aria-expanded={toggle}
             aria-label="menu hamburguer"
-            className=" bg-slate-50 hover:bg-transparent @md/nav:hidden"
+            className={cn(
+                'bg-transparent text-slate-800 hover:bg-transparent @md/nav:hidden',
+                {
+                    'justify-end': toggle,
+                }
+            )}
             {...props}
         >
             {children}

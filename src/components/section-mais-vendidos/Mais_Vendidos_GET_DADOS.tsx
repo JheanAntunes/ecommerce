@@ -2,6 +2,7 @@ import { Type_Api_DATA } from '@/schema/api/schema_Api_data'
 import { product_ImgThumb_Description_Title_formated_Array } from '@/utils/product_ImgThumb_formated_Array_ImgThumb'
 import { Poppins } from 'next/font/google'
 import Image from 'next/image'
+import Link from 'next/link'
 const poppins = Poppins({
     weight: ['600'],
     subsets: ['latin'],
@@ -18,26 +19,28 @@ async function Mais_Vendidos_GET_DADOS() {
     return (
         <div className="flex flex-nowrap gap-5 overflow-x-scroll">
             {data_Image_Description_Title.map(
-                ({ description, image_thumbnail, title }) => (
-                    <div
-                        key={title}
-                        className="flex flex-col items-center gap-2"
-                    >
-                        <div className="relative h-28 w-44 overflow-hidden rounded-xl">
-                            <Image
-                                src={image_thumbnail}
-                                alt={description}
-                                fill
-                                sizes="200px"
-                                className="object-contain"
-                            />
-                        </div>
-                        <span
-                            className={`${poppins.className} text-base font-medium`}
+                ({ description, image_thumbnail, title, id }) => (
+                    <Link key={title} href={`/product/${id}`}>
+                        <div
+                            key={title}
+                            className="flex flex-col items-center gap-2"
                         >
-                            {title}
-                        </span>
-                    </div>
+                            <div className="relative h-28 w-44 overflow-hidden rounded-xl">
+                                <Image
+                                    src={image_thumbnail}
+                                    alt={description}
+                                    fill
+                                    sizes="200px"
+                                    className="object-contain"
+                                />
+                            </div>
+                            <span
+                                className={`${poppins.className} text-base font-medium`}
+                            >
+                                {title}
+                            </span>
+                        </div>
+                    </Link>
                 )
             )}
         </div>
