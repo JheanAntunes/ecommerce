@@ -17,7 +17,7 @@ function CartAsideDetalhes() {
                 <TypographySmall className="flex gap-2">
                     Valor total:{' '}
                     <span className="text-slate-800">
-                        {totalPrice &
+                        {totalPrice &&
                             totalPrice.toLocaleString('pt-BR', {
                                 style: 'currency',
                                 currency: 'BRL',
