@@ -10,7 +10,7 @@ const poppins = Poppins({
 })
 
 async function Mais_Vendidos_GET_DADOS() {
-    const response = await fetch('http://localhost:3000/api/GET_DATA_PRODUCTS')
+    const response = await fetch(`${process.env.domain}/api/GET_DATA_PRODUCTS`)
     if (!response.ok) throw new Error('ERROR: Mais_Vendidos_GET_DADOS')
     const data: Type_Api_DATA = await response.json()
     const data_Image_Description_Title =
