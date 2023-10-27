@@ -17,7 +17,7 @@ export default function Error({
     }, [error])
 
     return (
-        <div className="flex h-full w-full items-center justify-center">
+        <div className="col-start-2 col-end-2 flex h-full w-full items-center justify-center">
             <TypographyDecoradorH2>
                 Ooops! Alguma coisa deu errado.
             </TypographyDecoradorH2>
