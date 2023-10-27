@@ -17,27 +17,32 @@ function CartAsideDetalhes() {
                 <TypographySmall className="flex gap-2">
                     Valor total:{' '}
                     <span className="text-slate-800">
-                        {totalPrice.toLocaleString('pt-BR', {
-                            style: 'currency',
-                            currency: 'BRL',
-                        })}
+                        {totalPrice &
+                            totalPrice.toLocaleString('pt-BR', {
+                                style: 'currency',
+                                currency: 'BRL',
+                            })}
+                        R$: 0
                     </span>
                 </TypographySmall>
             </li>
             <li>
                 <TypographySmall className="flex gap-2">
                     Quantidade de produtos:{' '}
-                    <span className="text-slate-800">{cartCount}</span>{' '}
+                    <span className="text-slate-800">
+                        {cartCount ? cartCount : 0}
+                    </span>{' '}
                 </TypographySmall>
             </li>
             <li>
                 <TypographySmall className="flex gap-2">
                     Desconto total:{' '}
                     <span className="text-slate-800">
-                        {full_Discount.toLocaleString('pt-BR', {
-                            style: 'currency',
-                            currency: 'BRL',
-                        })}
+                        {full_Discount &&
+                            full_Discount.toLocaleString('pt-BR', {
+                                style: 'currency',
+                                currency: 'BRL',
+                            })}
                     </span>
                 </TypographySmall>
             </li>
