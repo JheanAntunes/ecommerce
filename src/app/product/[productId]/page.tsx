@@ -37,6 +37,7 @@ async function PageProductDynamic({
     params: { productId },
     searchParams,
 }: Type_PageProductDynamic_Props) {
+    if (!process.env.domain) return null
     const response = await fetch(
         `${process.env.domain}/api/GET_DATA_PRODUCTS/${productId}`
     )
