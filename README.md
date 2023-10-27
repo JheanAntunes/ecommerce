@@ -1,5 +1,4 @@
 ## Projeto de ecommerce para praticar
-
 > uma listinha resumida que pratiquei.
 - git / github
     - git add
