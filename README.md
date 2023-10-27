@@ -26,6 +26,7 @@
     - Manipulador de Roteamento Dinâmico
     - Next Font
     - Componentes Client / Server
+    - Error
 - Figma 
    - [projeto](https://www.figma.com/file/F3L5y9LhTba3u1u0sdW2OS/Projeto-Ecommerce?type=design&node-id=0%3A1&mode=design&t=WpXyV82ACMpRTKdX-1)
    
