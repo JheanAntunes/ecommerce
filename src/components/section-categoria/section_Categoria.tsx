@@ -22,19 +22,19 @@ function Section_Categoria() {
             <div className="flex justify-around">
                 <Categoria_Product
                     alt="Celular"
-                    src="https://i.dummyjson.com/data/products/1/thumbnail.jpg"
+                    src="https://cdn.dummyjson.com/product-images/1/thumbnail.jpg"
                     href="#"
                     text="Celular"
                 />
                 <Categoria_Product
                     alt="notebook"
-                    src="https://i.dummyjson.com/data/products/6/thumbnail.png"
+                    src="https://cdn.dummyjson.com/product-images/7/thumbnail.jpg"
                     href="#"
                     text="Notebook"
                 />
                 <Categoria_Product
                     alt="Perfumes"
-                    src="https://i.dummyjson.com/data/products/11/thumbnail.jpg"
+                    src="https://cdn.dummyjson.com/product-images/11/thumbnail.jpg"
                     href="#"
                     text="Perfumes"
                 />
