@@ -1,6 +1,6 @@
 'use client'
 import useLogicLikeProduct, {
-    Type_useLogicLikeProduct_Props
+    Type_useLogicLikeProduct_Props,
 } from '@/components/section-produtos/useLogicLikeProduct'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
@@ -38,7 +38,7 @@ function Product_Detalhes_Like({
     }, [setToggle, chaveLocalStorage, shortcut_Condional])
 
     return (
-        <div className={cn("",{},className)}>
+        <div className={cn('', {}, className)}>
             <Button
                 size="icon"
                 className="bg-transparent hover:bg-transparent"
