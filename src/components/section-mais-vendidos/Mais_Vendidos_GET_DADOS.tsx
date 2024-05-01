@@ -10,8 +10,8 @@ const poppins = Poppins({
 })
 
 async function Mais_Vendidos_GET_DADOS() {
-    if (!process.env.domain) return null
-    const response = await fetch(`${process.env.domain}/api/GET_DATA_PRODUCTS`)
+    // if (!process.env.domain) return null
+    const response = await fetch(`https://dummyjson.com/products?limit=8`)
     if (!response.ok) throw new Error('ERROR: Mais_Vendidos_GET_DADOS')
     const data: Type_Api_DATA = await response.json()
     const data_Image_Description_Title =

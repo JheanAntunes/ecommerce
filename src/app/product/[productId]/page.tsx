@@ -21,11 +21,11 @@ export async function generateMetadata({
     params,
 }: Type_PageParams): Promise<Metadata> {
     const response = await fetch(
-        `${process.env.domain}/api/GET_DATA_PRODUCTS/${params.productId}`
+        `https://dummyjson.com/products/${params.productId}`
     )
     if (!response.ok) throw new Error('Error:PageProductDynamic')
-
     const product: Type_Api_Product = await response.json()
+    console.log('product: ', product)
 
     return {
         title: product.title,
@@ -37,10 +37,8 @@ async function PageProductDynamic({
     params: { productId },
     searchParams,
 }: Type_PageProductDynamic_Props) {
-    if (!process.env.domain) return null
-    const response = await fetch(
-        `${process.env.domain}/api/GET_DATA_PRODUCTS/${productId}`
-    )
+    // if (!process.env.domain) return null
+    const response = await fetch(`https://dummyjson.com/products/${productId}`)
     if (!response.ok) throw new Error('Error:PageProductDynamic')
 
     const product: Type_Api_Product = await response.json()
