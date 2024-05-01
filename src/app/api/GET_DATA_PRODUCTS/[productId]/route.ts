@@ -8,7 +8,6 @@ export async function GET(
     req: NextRequest,
     { params: { productId } }: { params: { productId: string } }
 ) {
-    console.log(productId)
     //Pegar o parametro de url enviado.
     try {
         const response = await fetch(
